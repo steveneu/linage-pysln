@@ -1,0 +1,16 @@
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BEGIN TEMPLATE
+
+# Generated files
+#bin/
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END OF TEMPLATE, start of sln customizations
+
+# visual studio files
+.pyproj
+.sln
+
+# pycharm files
+.pyproj
+.idea
+__pycache__
+
