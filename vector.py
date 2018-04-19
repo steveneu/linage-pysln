@@ -1,6 +1,7 @@
 import sys
 from math import sqrt, acos, pi
 from decimal import Decimal, getcontext
+from collections.abc import Iterable
 
 getcontext().prec = 30
 
@@ -22,6 +23,16 @@ class Vector(object):
 
         except TypeError:
             raise TypeError('The coordinates must be an iterable')
+
+    def __iter__(self):
+        return self.coordinates
+    #
+    # def __next__(self):
+    #     value = self.coordinates[self.current]
+    #     self.current += 1
+    #     return value
+
+
     
     ## print coordinates
     def print(self):
@@ -168,7 +179,8 @@ class Vector(object):
         return Vector.area_of_parallellogram()/Decimal ('2.0')
 
     def __str__(self):
-        return 'Vector: {}'.format(self.coordinates)
+        coordinates_as_floats = map(float, self.coordinates)
+        return 'Vector: {}'.format(coordinates_as_floats)
 
     def __eq__(self, v):
         return self.coordinates == v.coordinates
