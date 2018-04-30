@@ -32,8 +32,6 @@ class Vector(object):
     #     self.current += 1
     #     return value
 
-
-    
     ## print coordinates
     def print(self):
         print ('coordinates: ')
@@ -184,6 +182,9 @@ class Vector(object):
 
     def __eq__(self, v):
         return self.coordinates == v.coordinates
+
+    def __getitem__(self, i):
+        return self.coordinates[i]
 
 
     

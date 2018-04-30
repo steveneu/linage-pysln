@@ -26,7 +26,7 @@ class Plane(object):
         try:
             n = self.normal_vector
             c = self.constant_term
-            basepoint_coords = ['0']*self.dimension
+            basepoint_coords = ['0'] * self.dimension
 
             initial_index = Plane.first_nonzero_index(n)
             initial_coefficient = n.coordinates[initial_index]
@@ -132,57 +132,52 @@ class MyDecimal(Decimal):
     def is_near_zero(self, eps=1e-10):
         return abs(self) < eps
 
-def main():
-    plane_one = Plane(normal_vector = Vector(['-0.412', '3.806', '0.728']), constant_term = '-3.46')
-    plane_two = Plane(normal_vector = Vector(['1.03', '-9.515', '-1.82']), constant_term = '8.65')
-    message = '\n' + "p1" + " and " + "p2" + " are parallel? "
-    if Plane.parallel(plane_one, plane_two):
-        message += "yes"
-    else:
-        message += "no"
-
-    message += " coincident: "
-    if Plane.coincident(plane_one, plane_two):
-        message += " yes"
-    else:
-        message += " no"
-    print(message)
-
-    plane_three = Plane(normal_vector=Vector(['2.611', '5.528', '0.283']), constant_term='4.6')
-    plane_four = Plane(normal_vector=Vector(['7.715', '8.306', '5.342']), constant_term='3.76')
-    # Plane.parallel(plane_three, plane_four)
-    # Plane.coincident(plane_three, plane_four)
-    message = '\n' + "p3" + " and " + 'p4' + " are parallel? "
-    if Plane.parallel(plane_three, plane_four):
-        message += "yes"
-    else:
-        message += "no"
-
-    message += " coincident: "
-    if Plane.coincident(plane_three, plane_four):
-        message += " yes"
-    else:
-        message += " no"
-    print(message)
-
-    plane_five = Plane(normal_vector=Vector(['-7.926', '8.625', '-7.212']), constant_term='-7.952')
-    plane_six = Plane(normal_vector=Vector(['-2.642', '2.875', '-2.404']), constant_term='2.443')
-    # Plane.parallel(plane_five, plane_six)
-    # Plane.coincident(plane_five, plane_six)
-    message = '\n' + "p5" + " and " + 'p6' + " are parallel? "
-    if Plane.parallel(plane_five, plane_six):
-        message += "yes"
-    else:
-        message += "no"
-
-    message += " coincident: "
-    if Plane.coincident(plane_five, plane_six):
-        message += " yes"
-    else:
-        message += " no"
-    print(message)
-
-    # lesson 3, #7 - coding functions for planes
+# def main():
+#     # lesson 3, #7 - coding functions for planes
+#     plane_one = Plane(normal_vector = Vector(['-0.412', '3.806', '0.728']), constant_term = '-3.46')
+#     plane_two = Plane(normal_vector = Vector(['1.03', '-9.515', '-1.82']), constant_term = '8.65')
+#     message = '\n' + "p1" + " and " + "p2" + " are parallel? "
+#     if Plane.parallel(plane_one, plane_two):
+#         message += "yes"
+#     else:
+#         message += "no"
+#
+#     message += " coincident: "
+#     if Plane.coincident(plane_one, plane_two):
+#         message += " yes"
+#     else:
+#         message += " no"
+#     print(message)
+#
+#     plane_three = Plane(normal_vector=Vector(['2.611', '5.528', '0.283']), constant_term='4.6')
+#     plane_four = Plane(normal_vector=Vector(['7.715', '8.306', '5.342']), constant_term='3.76')
+#     message = '\n' + "p3" + " and " + 'p4' + " are parallel? "
+#     if Plane.parallel(plane_three, plane_four):
+#         message += "yes"
+#     else:
+#         message += "no"
+#
+#     message += " coincident: "
+#     if Plane.coincident(plane_three, plane_four):
+#         message += " yes"
+#     else:
+#         message += " no"
+#     print(message)
+#
+#     plane_five = Plane(normal_vector=Vector(['-7.926', '8.625', '-7.212']), constant_term='-7.952')
+#     plane_six = Plane(normal_vector=Vector(['-2.642', '2.875', '-2.404']), constant_term='2.443')
+#     message = '\n' + "p5" + " and " + 'p6' + " are parallel? "
+#     if Plane.parallel(plane_five, plane_six):
+#         message += "yes"
+#     else:
+#         message += "no"
+#
+#     message += " coincident: "
+#     if Plane.coincident(plane_five, plane_six):
+#         message += " yes"
+#     else:
+#         message += " no"
+#     print(message)
 
     # lesson 3, #4 - coding functions for lines
     # A_one = Line([4.046, 2.836], 1.21)
@@ -261,8 +256,6 @@ def main():
     # v = Vector(['1.5', '9.547', '3.691'])
     # w = Vector(['-6.007', '0.124', '5.772'])
     # print (Decimal(0.5) * Vector.cross(v,w).magnitude())
-
-main()
 
 # lesson 2, #8
 # onev = Vector([7.887, 4.138])
