@@ -30,17 +30,27 @@ class LinearSystem(object):
         self.planes[row2] = temp
 
     def multiply_coefficient_and_row(self, coefficient, row):
-        self.planes[row].normal_vector = self.planes[row].normal_vector.times_scalar(coefficient)
-        self.planes[row].constant_term *= coefficient
-        # Plane.normal_vector, Plane.constant_term, vector.dimension
+        n = self[row].normal_vector
+        k = self[row].constant_term
+
+        new_normal_vector = n.times_scalar(coefficient)
+        new_constant_term = k * coefficient
+        self[row] = Plane(normal_vector=new_normal_vector,
+                          constant_term=new_constant_term)
 
     # row_to_... are indices
     def add_multiple_times_row_to_row(self, coefficient, row_to_add, row_to_be_added_to):
         # [row_to_be_added_to] = [row_to_be_added_to] + [row_to_add] * coefficient
-        src_vector = self.planes[row_to_add].normal_vector.times_scalar(coefficient)
-        src_coefficient = self.planes[row_to_add].constant_term * coefficient
-        self.planes[row_to_be_added_to].normal_vector = self.planes[row_to_be_added_to].normal_vector.plus(src_vector)
-        self.planes[row_to_be_added_to].constant_term += src_coefficient
+        n1 = self[row_to_add].normal_vector
+        n2 = self[row_to_be_added_to].normal_vector
+        k1 = self[row_to_add].constant_term
+        k2 = self[row_to_be_added_to].constant_term
+
+        new_normal_vector = n1.times_scalar(coefficient).plus(n2)
+        new_constant_term = (k1 * coefficient) + k2
+
+        self[row_to_be_added_to] = Plane(normal_vector=new_normal_vector,
+                                         constant_term=new_constant_term)
 
     def indices_of_first_nonzero_terms_in_each_row(self):
         num_equations = len(self)
