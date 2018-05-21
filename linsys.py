@@ -3,6 +3,7 @@ from copy import deepcopy
 
 from vector import Vector
 from plane import Plane
+from hyperplane import Hyperplane
 
 getcontext().prec = 30
 
