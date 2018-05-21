@@ -58,7 +58,7 @@ class Plane(object):
 
                 if first_orthogonal and second_orthogonal:
                     result = True   # vector formed by points on different planes is orthogonal to both planes' normals,
-                                    # therefore planes are coincident
+                    # therefore planes are coincident
             else:
                 result = True # planes share a common point and they are parallel, therefore coincident
 
