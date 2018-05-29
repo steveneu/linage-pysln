@@ -285,12 +285,12 @@ class MyDecimal(Decimal):
     def is_near_zero(self, eps=1e-10):
         return abs(self) < eps
 
-def main():
-    p1 = Plane(normal_vector=Vector(['0.786', '0.786', '0.588']), constant_term='-0.714')
-    p2 = Plane(normal_vector=Vector(['-0.131', '-0.131', '0.244']), constant_term='0.319')
-    s = LinearSystem([p1,p2])
-    sol = s.compute_solution()
-    print('System 1 solution:\n{}'.format(sol)) #format() not working right now for parameterization object
+# def main():
+#     p1 = Plane(normal_vector=Vector(['0.786', '0.786', '0.588']), constant_term='-0.714')
+#     p2 = Plane(normal_vector=Vector(['-0.131', '-0.131', '0.244']), constant_term='0.319')
+#     s = LinearSystem([p1,p2])
+#     sol = s.compute_solution()
+#     print('System 1 solution:\n{}'.format(sol)) #format() not working right now for parameterization object
 
     # p1 = Plane(normal_vector=Vector(['8.631', '5.112']))
     # no solutions
@@ -530,4 +530,4 @@ def main():
                         tf.add_multiple_times_row_to_row(-test_term, row_index, clear_index)
                         '''
 
-main()
+# main()
